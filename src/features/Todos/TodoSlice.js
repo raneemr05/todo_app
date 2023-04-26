@@ -24,7 +24,7 @@ const todoSlice = createSlice({
     completedTodo: (state, action) => {
         const { id} = action.payload;
         const existingTodo = state.find((todo) => todo.id === id);
-        if (existingTodo.completed == "false") {
+        if (existingTodo.completed === "false") {
           existingTodo.completed= "true";
         }
       },
@@ -33,7 +33,7 @@ const todoSlice = createSlice({
         const existingTodo = state.find((todo) => todo.id === id);
         if(existingTodo)
         {
-            return state.filter(todos => todos.id != id);
+            return state.filter(todos => todos.id !== id);
         }
 
     }
